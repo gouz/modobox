@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>modobox</title>
+		<link href="//google-code-prettify.googlecode.com/svn/trunk/src/prettify.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/modobox.css">
+		<style>
+			a {
+				color: #2ECC71;
+			}
+			a:hover {
+				color: #27AE60;
+			}
+			pre {
+				width: 90%;
+				margin: 0 auto;
+				font-size: 0.9em;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="gallery1">
+			gallery 1
+			<a href="http://www.ilovecolors.com.ar" data-modobox="link">link</a>
+			<a href="http://www.gougouzian.fr/projects/jquery/moodular/assets/img/photo01.jpg" data-modobox="image">image</a>
+			<a href="http://www.youtube.com/watch?v=s6NDY8FSr9M" data-modobox="youtube">youtube</a>
+			<a href="https://maps.google.com/maps?q=Saint-%C3%89tienne,+France&hl=fr&ie=UTF8&sll=45.499456,4.435733&sspn=0.066778,0.169086&oq=saint+etien&t=h&hnear=Saint-%C3%89tienne,+Loire,+Rh%C3%B4ne-Alpes,+France&z=11" data-modobox="gmaps">gmaps</a>
+			<a href="http://vimeo.com/65666919" data-modobox="vimeo">vimeo</a>
+			<a href="#myAnchor" data-modobox="anchor">anchor</a>
+		</p>
+		<div id="myAnchor">
+		<pre class="prettyprint">
+$('#gallery1 a').modobox({
+	overlay : {
+		background : '#2980b9',
+		opacity : 0.8
+	},
+	controls : 'keys buttons closeOverlay',
+	effects : 'fade',
+	transitions: 'slide',
+	t_slide: {
+		speed: 700,
+		easing: 'easeOutBounce',
+		queue: false,
+		direction: 'left'
+	},
+	c_buttons: {
+		prev: 'previous item',
+		next: 'next item',
+		close: 'close'
+	}
+});</pre></div>
+		<p id="gallery2">
+			gallery 2
+			<a href="http://www.gougouzian.fr/projects/jquery/moodular/assets/img/photo02.jpg">image 1</a>
+			<a href="http://www.gougouzian.fr/projects/jquery/moodular/assets/img/photo03.jpg">image 2</a>
+		</p>
+		<pre class="prettyprint">
+$('#gallery2 a').modobox({
+	type : 'image',
+	transitions: 'fade',
+	overlay : {
+		background : '#C0392B url(assets/img/photo04.jpg) repeat-x',
+		opacity : 0.4
+	}
+});</pre>
+		<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script src="//google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+		<script src="assets/js/core.js"></script>
+		<script src="assets/js/controls/buttons.js"></script>
+		<script src="assets/js/controls/closeOverlay.js"></script>
+		<script src="assets/js/controls/keys.js"></script>
+		<script src="assets/js/effects/fade.js"></script>
+		<script src="assets/js/transitions/fade.js"></script>
+		<script src="assets/js/transitions/slide.js"></script>
+		<script src="assets/js/types/anchor.js"></script>
+		<script src="assets/js/types/gmaps.js"></script>
+		<script src="assets/js/types/image.js"></script>
+		<script src="assets/js/types/link.js"></script>
+		<script src="assets/js/types/vimeo.js"></script>
+		<script src="assets/js/types/youtube.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				prettyPrint();
+				$('#gallery1 a').modobox({
+					overlay : {
+						background : '#2980b9',
+						opacity : 0.8
+					},
+					controls : 'keys buttons closeOverlay',
+					effects : 'fade',
+					transitions: 'slide',
+					t_slide: {
+						speed: 700,
+						easing: 'easeOutBounce',
+						queue: false,
+						direction: 'left'
+					},
+					c_buttons: {
+						prev: 'previous item',
+						next: 'next item',
+						close: 'close'
+					}
+				});
+				$('#gallery2 a').modobox({
+					type : 'image',
+					transitions: 'fade',
+					overlay : {
+						background : '#C0392B url(http://www.gougouzian.fr/projects/jquery/moodular/assets/img/photo04.jpg) repeat-x',
+						opacity : 0.4
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
